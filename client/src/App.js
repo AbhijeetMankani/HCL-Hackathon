@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import Login from "./pages/LoginPage/Login";
 import PatientDashboard from "./pages/PatientDashboard/PatientDashboard";
 import PatientProfile from "./pages/PatientProfile/PatientProfile";
-
+import HealthInformation from "./pages/HealthInformation/HealthInformation";
 function App() {
 	return (
 		<>
@@ -14,6 +14,10 @@ function App() {
 					<Route path="/login" element={<Login />} />
 					<Route path="/dashboard" element={<PatientDashboard />} />
 					<Route path="/profile" element={<PatientProfile />} />
+					<Route
+						path="/health-info"
+						element={<HealthInformation />}
+					/>
 				</Routes>
 			</BrowserRouter>
 		</>

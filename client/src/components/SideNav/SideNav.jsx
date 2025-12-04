@@ -23,10 +23,10 @@ export default function SideNav() {
 					<Link to="/profile">My Profile</Link>
 				</li>
 				<li>
-					<a href="#goals">Wellness Goals</a>
+					<a href="/dashboard#goals">Wellness Goals</a>
 				</li>
 				<li>
-					<Link to="/messages">Messages</Link>
+					<Link to="/health-info">Health Info</Link>
 				</li>
 				<li>
 					<a

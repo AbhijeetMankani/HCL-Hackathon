@@ -1,0 +1,115 @@
+.healthInformation {
+	background: #ffffff;
+	min-height: 100vh;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif;
+}
+
+.healthContent {
+	flex: 1;
+	padding: 30px 40px;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	background: #f9fafb;
+}
+
+.healthHeader {
+	background: white;
+	border-radius: 12px;
+	padding: 24px 32px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	border-left: 4px solid #6366f1;
+}
+
+.healthHeader h1 {
+	margin: 0;
+	color: #1f2937;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.healthTopicsContainer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 24px;
+}
+
+.healthCard {
+	background: white;
+	border-radius: 12px;
+	padding: 24px 28px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	border-top: 4px solid #6366f1;
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.healthCard:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.healthCard h2 {
+	margin: 0 0 12px 0;
+	color: #1f2937;
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+.healthCard p {
+	margin: 0 0 16px 0;
+	color: #6b7280;
+	font-size: 0.95rem;
+	line-height: 1.6;
+	flex-grow: 1;
+}
+
+.readMoreButton {
+	align-self: flex-start;
+	padding: 10px 20px;
+	background: #374151;
+	color: white;
+	border: none;
+	border-radius: 6px;
+	font-weight: 600;
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.readMoreButton:hover {
+	background: #1f2937;
+	transform: translateX(2px);
+}
+
+.readMoreButton:active {
+	background: #111827;
+}
+
+@media (max-width: 900px) {
+	.healthContent {
+		padding: 20px 24px;
+		gap: 16px;
+	}
+
+	.healthHeader {
+		padding: 16px 20px;
+	}
+
+	.healthHeader h1 {
+		font-size: 1.5rem;
+	}
+
+	.healthTopicsContainer {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.healthCard {
+		padding: 16px 20px;
+	}
+}

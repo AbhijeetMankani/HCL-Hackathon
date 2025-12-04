@@ -3,6 +3,7 @@ import SideNav from "../../components/SideNav/SideNav";
 import ProfileHeader from "../../components/ProfileHeader/ProfileHeader";
 import ProfileCard from "../../components/ProfileCard/ProfileCard";
 import ProfileField from "../../components/ProfileField/ProfileField";
+import ProfileListField from "../../components/ProfileListField/ProfileListField";
 import "./PatientProfile.css";
 
 export default function PatientProfile() {
@@ -13,9 +14,11 @@ export default function PatientProfile() {
 		phone: "+91 98765 43210",
 		address: "12/A, MG Road, Koramangala, Bangalore, Karnataka 560034",
 		assignedDoctor: "Dr. Priya Sharma",
-		allergies: "Aspirin, Shellfish",
-		currentMedications:
-			"Metformin 500mg (twice daily), Atorvastatin 10mg (at night)",
+		allergies: ["Aspirin", "Shellfish"],
+		currentMedications: [
+			"Metformin 500mg (twice daily)",
+			"Atorvastatin 10mg (at night)",
+		],
 	});
 
 	const [editData, setEditData] = useState({ ...profileData });
@@ -109,9 +112,9 @@ export default function PatientProfile() {
 					</ProfileCard>
 
 					<ProfileCard title="Basic Health Information">
-						<ProfileField
+						<ProfileListField
 							label="Allergies"
-							value={
+							items={
 								isEditing
 									? editData.allergies
 									: profileData.allergies
@@ -120,13 +123,11 @@ export default function PatientProfile() {
 							onChange={(value) =>
 								handleChange("allergies", value)
 							}
-							type="textarea"
-							rows={2}
 						/>
 
-						<ProfileField
+						<ProfileListField
 							label="Current Medications"
-							value={
+							items={
 								isEditing
 									? editData.currentMedications
 									: profileData.currentMedications
@@ -135,8 +136,6 @@ export default function PatientProfile() {
 							onChange={(value) =>
 								handleChange("currentMedications", value)
 							}
-							type="textarea"
-							rows={3}
 						/>
 					</ProfileCard>
 				</div>

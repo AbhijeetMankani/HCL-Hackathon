@@ -169,6 +169,103 @@
 	margin-top: 8px;
 }
 
+/* Profile List Field Styles */
+.profileListField {
+	margin-bottom: 20px;
+}
+
+.listEditContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.listItem {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+}
+
+.listItem input {
+	flex: 1;
+	padding: 10px 12px;
+	border: 2px solid #d1d5db;
+	border-radius: 8px;
+	font-family: inherit;
+	font-size: 0.95rem;
+	color: #1f2937;
+	transition: all 0.2s ease;
+}
+
+.listItem input:focus {
+	outline: none;
+	border-color: #6366f1;
+	box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.removeButton {
+	background: #ef4444;
+	color: white;
+	border: none;
+	width: 32px;
+	height: 32px;
+	border-radius: 6px;
+	font-size: 1.5rem;
+	line-height: 1;
+	cursor: pointer;
+	transition: background 0.2s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.removeButton:hover {
+	background: #dc2626;
+}
+
+.addButton {
+	padding: 10px 16px;
+	background: #6366f1;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-weight: 600;
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: background 0.2s ease;
+	margin-top: 4px;
+	align-self: flex-start;
+}
+
+.addButton:hover {
+	background: #4f46e5;
+}
+
+.listViewContainer ul {
+	margin: 0;
+	padding-left: 24px;
+	background: #f9fafb;
+	border-radius: 8px;
+	border: 1px solid #e5e7eb;
+	padding: 12px 12px 12px 32px;
+}
+
+.listViewContainer li {
+	color: #1f2937;
+	margin: 6px 0;
+	line-height: 1.5;
+}
+
+.listViewContainer p {
+	margin: 0;
+	padding: 10px 12px;
+	background: #f9fafb;
+	border-radius: 8px;
+	color: #6b7280;
+	border: 1px solid #e5e7eb;
+}
+
 @media (max-width: 900px) {
 	.profileContent {
 		padding: 20px 24px;

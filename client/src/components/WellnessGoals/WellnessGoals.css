@@ -1,10 +1,13 @@
 .wellnessGoals {
-	padding: 12px 16px;
+	padding: 0;
+	background: transparent;
 }
 
 .wellnessGoals h2 {
-	margin: 0 0 12px 0;
-	font-size: 1.25rem;
+	margin: 0 0 16px 0;
+	font-size: 1.5rem;
+	color: #1f2937;
+	font-weight: 600;
 }
 
 .goalCards {
@@ -13,16 +16,8 @@
 	gap: 16px;
 	align-items: stretch;
 	flex-wrap: wrap;
-	flex: 1 1 0;
-}
-.wellnessGoals {
-	background-color: #f0f8ff;
-	padding: 15px;
-	border-radius: 8px;
-	margin-bottom: 20px;
 }
 
-.wellnessGoals h3 {
-	margin-top: 0;
-	color: #333;
+.goalCards > * {
+	flex: 1 1 200px;
 }

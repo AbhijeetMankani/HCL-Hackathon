@@ -14,7 +14,7 @@ export default function SideNav() {
 
 	return (
 		<nav className="side-nav" aria-label="Main navigation">
-			<h1>Health</h1>
+			<h1 className="side-nav-title">Health</h1>
 			<ul className="side-nav-list">
 				<li>
 					<Link to="/dashboard">Dashboard</Link>

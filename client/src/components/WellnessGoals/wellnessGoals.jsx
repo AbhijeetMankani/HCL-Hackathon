@@ -12,6 +12,10 @@ export default function WellnessGoals() {
 		target: 60,
 	});
 	const [sleepGoal, setSleepGoal] = useState({ progress: 6, target: 8 });
+	const [hydrationGoal, setHydrationGoal] = useState({
+		progress: 6,
+		target: 8,
+	});
 
 	return (
 		<>
@@ -35,6 +39,12 @@ export default function WellnessGoals() {
 						progress={sleepGoal.progress}
 						target={sleepGoal.target}
 						updateGoal={setSleepGoal}
+					/>
+					<GoalCard
+						type="hydration"
+						progress={hydrationGoal.progress}
+						target={hydrationGoal.target}
+						updateGoal={setHydrationGoal}
 					/>
 				</div>
 			</div>

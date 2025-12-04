@@ -2,6 +2,7 @@ import SideNav from "../../components/SideNav/SideNav";
 import WellnessGoals from "../../components/WellnessGoals/WellnessGoals";
 import PreventiveCareReminders from "../../components/PreventiveCareReminders/PreventiveCareReminders";
 import HealthTip from "../../components/HealthTip/HealthTip";
+import "./PatientDashboard.css";
 
 export default function PatientDashboard() {
 	return (
@@ -12,11 +13,8 @@ export default function PatientDashboard() {
 			>
 				<SideNav />
 
-				<div
-					className="patientContent"
-					style={{ flex: 1, padding: 20 }}
-				>
-					<div>
+				<div className="patientContent">
+					<div className="welcomeCard">
 						<h1>Welcome, David</h1>
 					</div>
 					<WellnessGoals className="goals" />

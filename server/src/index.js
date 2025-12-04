@@ -10,8 +10,15 @@ dotenv.config();
 // Connect to Database
 connectDB();
 
+// CORS configuration - allow requests from React app
+const corsOptions = {
+  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(cookieParser());
 
 // Start Server

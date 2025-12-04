@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import { authAPI } from '../../services/api';
 import './Login.css';
 
 export default function Login() {
@@ -69,15 +69,17 @@ export default function Login() {
 		setLoading(true);
 
 		try {
-			const response = await axios.post('http://localhost:5000/api/auth/login', loginData);
+			const response = await authAPI.login(loginData);
 
-			if (response.status === 200) {
-				localStorage.setItem('authToken', response.data.token);
-				localStorage.setItem('userEmail', loginData.email);
+			if (response.user) {
+				// Store user data in localStorage
+				localStorage.setItem('userId', response.user._id);
+				localStorage.setItem('userEmail', response.user.email);
+				localStorage.setItem('userName', response.user.name);
 				window.location.href = '/dashboard';
 			}
 		} catch (err) {
-			setError(err.response?.data?.message || 'Network error. Please try again.');
+			setError(err.response?.data?.error || 'Invalid email or password');
 			console.error(err);
 		} finally {
 			setLoading(false);
@@ -122,13 +124,16 @@ export default function Login() {
 		setLoading(true);
 
 		try {
-			const response = await axios.post('http://localhost:5000/api/auth/register', {
-				name: registerData.name,
-				email: registerData.email,
-				password: registerData.password,
+			const response = await authAPI.register({
+				user: {
+					name: registerData.name,
+					email: registerData.email,
+					password: registerData.password,
+				},
+				patient: {}
 			});
 
-			if (response.status === 201 || response.status === 200) {
+			if (response.user) {
 				setError('');
 				alert('Registration successful! Please log in.');
 				setIsLogin(true);
@@ -140,7 +145,7 @@ export default function Login() {
 				});
 			}
 		} catch (err) {
-			setError(err.response?.data?.message || 'Network error. Please try again.');
+			setError(err.response?.data?.error || 'Registration failed. Please try again.');
 			console.error(err);
 		} finally {
 			setLoading(false);

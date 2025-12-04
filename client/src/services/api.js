@@ -45,12 +45,28 @@ apiClient.interceptors.response.use(
 export const authAPI = {
   register: async (userData) => {
     const response = await apiClient.post('/patients/register', userData);
+    // Store token if registration successful
+    if (response.data.token) {
+      localStorage.setItem('authToken', response.data.token);
+    }
     return response.data;
   },
 
   login: async (credentials) => {
     const response = await apiClient.post('/patients/login', credentials);
+    // Store token if login successful
+    if (response.data.token) {
+      localStorage.setItem('authToken', response.data.token);
+    }
     return response.data;
+  },
+
+  logout: () => {
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('userId');
+    localStorage.removeItem('patientId');
+    localStorage.removeItem('userEmail');
+    localStorage.removeItem('userName');
   },
 };
 
@@ -81,6 +97,16 @@ export const goalsAPI = {
 
   updateGoal: async (patientId, goalId, goalData) => {
     const response = await apiClient.put(`/patients/goals/${patientId}/${goalId}`, goalData);
+    return response.data;
+  },
+
+  updateProgress: async (patientId, goalId, currentValue) => {
+    const response = await apiClient.patch(`/patients/goals/${patientId}/${goalId}/progress`, { currentValue });
+    return response.data;
+  },
+
+  deleteGoal: async (patientId, goalId) => {
+    const response = await apiClient.delete(`/patients/goals/${patientId}/${goalId}`);
     return response.data;
   },
 };

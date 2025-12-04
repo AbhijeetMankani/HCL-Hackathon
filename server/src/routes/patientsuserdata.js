@@ -1,10 +1,11 @@
 import express from 'express';
 import { Patient } from '../models/patient.js';
+import { authenticateToken } from '../middlewares/auth.js';
 
 const router = express.Router();
 
 // Get patient data by userId
-router.get('/:userId', async (req, res) => {
+router.get('/:userId', authenticateToken, async (req, res) => {
   try {
     const patient = await Patient.findOne({ userId: req.params.userId });
     if (!patient) return res.status(404).json({ error: 'Patient not found' });
@@ -15,7 +16,7 @@ router.get('/:userId', async (req, res) => {
 });
 
 // Update patient data by userId
-router.post('/:userId', async (req, res) => {
+router.post('/:userId', authenticateToken, async (req, res) => {
   try {
     const patient = await Patient.findOneAndUpdate(
       { userId: req.params.userId },

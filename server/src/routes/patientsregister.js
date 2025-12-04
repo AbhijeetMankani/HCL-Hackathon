@@ -2,6 +2,7 @@ import express from 'express';
 import bcrypt from 'bcrypt';
 import { Patient } from '../models/patient.js';
 import { User } from '../models/users.js';
+import { generateToken } from '../utils/jwt.js';
 
 const router = express.Router();
 
@@ -32,7 +33,15 @@ router.post('/', async (req, res) => {
     const userResponse = user.toObject();
     delete userResponse.password;
 
-    res.status(201).json({ user: userResponse, patient });
+    // Generate JWT token
+    const token = generateToken(user._id, user.email);
+
+    res.status(201).json({ 
+      message: 'Registration successful',
+      user: userResponse, 
+      patient,
+      token 
+    });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }

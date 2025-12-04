@@ -71,11 +71,15 @@ export default function Login() {
 		try {
 			const response = await authAPI.login(loginData);
 
-			if (response.user) {
-				// Store user data in localStorage
+			if (response.user && response.token) {
+				// Store user data and token in localStorage
+				localStorage.setItem('authToken', response.token);
 				localStorage.setItem('userId', response.user._id);
 				localStorage.setItem('userEmail', response.user.email);
 				localStorage.setItem('userName', response.user.name);
+				if (response.patient) {
+					localStorage.setItem('patientId', response.patient._id);
+				}
 				window.location.href = '/dashboard';
 			}
 		} catch (err) {
@@ -133,16 +137,20 @@ export default function Login() {
 				patient: {}
 			});
 
-			if (response.user) {
+			if (response.user && response.token) {
 				setError('');
-				alert('Registration successful! Please log in.');
-				setIsLogin(true);
-				setRegisterData({
-					name: '',
-					email: '',
-					password: '',
-					confirmPassword: '',
-				});
+				// Auto-login after registration
+				localStorage.setItem('authToken', response.token);
+				localStorage.setItem('userId', response.user._id);
+				localStorage.setItem('userEmail', response.user.email);
+				localStorage.setItem('userName', response.user.name);
+				if (response.patient) {
+					localStorage.setItem('patientId', response.patient._id);
+				}
+				alert('Registration successful! Redirecting to dashboard...');
+				setTimeout(() => {
+					window.location.href = '/dashboard';
+				}, 1000);
 			}
 		} catch (err) {
 			setError(err.response?.data?.error || 'Registration failed. Please try again.');

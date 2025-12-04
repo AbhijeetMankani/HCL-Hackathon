@@ -1,6 +1,8 @@
 import express from 'express';
 import { User } from '../models/users.js';
 import bcrypt from 'bcrypt';
+import { generateToken } from '../utils/jwt.js';
+import { Patient } from '../models/patient.js';
 
 const router = express.Router();
 
@@ -17,8 +19,18 @@ router.post('/', async (req, res) => {
     const userResponse = user.toObject();
     delete userResponse.password;
 
-    // You can add JWT token generation here
-    res.json({ message: 'Login successful', user: userResponse });
+    // Get patient data
+    const patient = await Patient.findOne({ userId: user._id });
+
+    // Generate JWT token
+    const token = generateToken(user._id, user.email);
+
+    res.json({ 
+      message: 'Login successful', 
+      user: userResponse,
+      patient,
+      token 
+    });
   } catch (err) {
     res.status(400).json({ error: err.message });
   }

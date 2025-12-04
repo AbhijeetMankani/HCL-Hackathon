@@ -18,6 +18,26 @@ export default function HealthInformation() {
 			description:
 				"Explore resources and support options for maintaining good mental health.",
 		},
+		{
+			title: "Heart Health & Cardiovascular Wellness",
+			description:
+				"Understand the importance of heart health, risk factors, and preventive measures for cardiovascular diseases.",
+		},
+		{
+			title: "Diabetes Management",
+			description:
+				"Learn about Type 1 and Type 2 diabetes, management strategies, nutrition tips, and blood sugar monitoring.",
+		},
+		{
+			title: "Physical Activity & Exercise",
+			description:
+				"Discover the benefits of regular exercise, workout routines suitable for different fitness levels, and staying active.",
+		},
+		{
+			title: "Nutrition & Healthy Eating",
+			description:
+				"Get expert advice on balanced diet, meal planning, food groups, and nutritional guidelines for optimal health.",
+		},
 	];
 
 	return (

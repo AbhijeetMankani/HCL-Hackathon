@@ -1,19 +1,5 @@
 # Healthcare Wellness & Preventive Care Portal
 
-## Problem Statement
-
-Healthcare systems today face significant challenges in engaging patients proactively:
-
-- **Fragmented Health Data**: Patients struggle to access and organize their health information across multiple providers
-- **Lack of Preventive Engagement**: Limited tools for patients to track wellness metrics and receive preventive care recommendations
-- **Communication Gap**: Insufficient communication channels between healthcare providers and patients
-- **User Segmentation**: Different user roles (patients, healthcare providers) require tailored interfaces and functionalities
-- **Accessibility**: Patients need easy access to health records, appointments, and personalized wellness insights
-
-This portal addresses these challenges by creating a unified platform where patients can manage their health proactively and providers can deliver preventive care recommendations.
-
----
-
 ## Solution Overview
 
 The Healthcare Wellness & Preventive Care Portal is a comprehensive web-based application designed to bridge the gap between patients and healthcare providers. It enables:
@@ -33,13 +19,13 @@ The application follows a **client-server architecture** with clear separation o
 ```
 ┌─────────────────────────────────────────────────────────┐
 │                    Frontend (Client)                     │
-│  - React/Vue-based responsive UI                        │
+│  - React based responsive UI                        │
 │  - Patient Dashboard, Provider Dashboard, Auth Pages    │
 └────────────────────┬────────────────────────────────────┘
                      │ API Calls (REST/GraphQL)
 ┌────────────────────▼────────────────────────────────────┐
 │                  Backend (Server)                        │
-│  - Node.js/Express or similar framework                │
+│  - Node.js/Express                                      │
 │  - Authentication & Authorization                       │
 │  - Database & Business Logic                           │
 └─────────────────────────────────────────────────────────┘
@@ -68,19 +54,13 @@ The application follows a **client-server architecture** with clear separation o
 - **Analytics**: View patient population health trends
 - **Messaging**: Communicate securely with patients
 
-#### **Security & Compliance**
-- HIPAA-compliant data storage and transmission
-- End-to-end encryption for sensitive information
-- Audit logging for all data access
-- Regular security updates and vulnerability assessments
 
 ### 3. **Technology Stack**
 
 **Frontend:**
-- Framework: React/Vue.js for responsive UI
-- State Management: Redux/Vuex
-- Styling: Tailwind CSS or Material-UI
-- Charts: Chart.js or D3.js for health analytics
+- Framework: React for responsive UI
+- State Management: React Context API
+- Styling: BootStrap
 
 **Backend:**
 - Runtime: Node.js
@@ -89,14 +69,10 @@ The application follows a **client-server architecture** with clear separation o
 - Authentication: JWT, bcrypt
 - Caching: Redis
 
-**Deployment:**
-- Containerization: Docker
-- Cloud Platform: AWS, Azure, or GCP
-- CI/CD: GitHub Actions or GitLab CI
 
 ### 4. **Development Phases**
 
-**Phase 1: Foundation** (Current)
+**Phase 1: Foundation**
 - Set up project structure and development environment
 - Implement authentication system
 - Create database schema
@@ -106,15 +82,6 @@ The application follows a **client-server architecture** with clear separation o
 - Develop patient dashboard with basic health tracking
 - Implement provider dashboard
 
-**Phase 3: Enhancement**
-- Add advanced analytics and reporting
-- Integrate third-party health APIs
-- Implement mobile responsiveness optimization
-
-**Phase 4: Optimization & Deployment**
-- Performance optimization
-- Security audits and compliance testing
-- Production deployment
 
 ---
 
@@ -125,14 +92,9 @@ HCL-Hackathon/
 ├── client/                          # Frontend application
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── LoginRegister/      # Authentication pages
-│   │   │   ├── PatientDashboard/   # Patient UI
-│   │   │   ├── ProviderDashboard/  # Provider UI
-│   │   │   └── Common/             # Shared components
 │   │   ├── pages/
 │   │   ├── services/               # API integration
 │   │   ├── store/                  # State management
-│   │   ├── styles/
 │   │   └── App.js
 │   ├── package.json
 │   └── README.md
@@ -158,7 +120,7 @@ HCL-Hackathon/
 
 ### Prerequisites
 - Node.js (v14 or higher)
-- npm or yarn
+- npm
 - Git
 - PostgreSQL or MongoDB (based on setup)
 
@@ -216,38 +178,5 @@ HCL-Hackathon/
 - Secure messaging with patients
 - Analytics and reporting tools
 
----
 
-## Key Objectives
 
-✅ **User-Centric Design**: Intuitive interfaces for both patients and providers  
-✅ **Data Security**: Industry-standard encryption and HIPAA compliance  
-✅ **Scalability**: Architecture designed to handle growing patient populations  
-✅ **Interoperability**: APIs for potential integration with external health systems  
-✅ **User Engagement**: Gamification and notifications to encourage healthy habits  
-
----
-
-## Benefits
-
-- **For Patients**: Easy access to health information, proactive health management, better communication with providers
-- **For Providers**: Comprehensive patient insights, improved care coordination, better health outcomes tracking
-- **For Healthcare Systems**: Reduced costs through preventive care, improved patient satisfaction, better resource management
-
----
-
-## Contributing
-
-Please read the individual README files in `client/` and `server/` directories for contribution guidelines specific to each part of the application.
-
----
-
-## License
-
-This project is part of the HCL Hackathon initiative.
-
----
-
-## Contact & Support
-
-For questions or support, please reach out to the development team or create an issue in the repository.

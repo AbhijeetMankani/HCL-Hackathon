@@ -1,0 +1,28 @@
+.wellnessGoals {
+	padding: 12px 16px;
+}
+
+.wellnessGoals h2 {
+	margin: 0 0 12px 0;
+	font-size: 1.25rem;
+}
+
+.goalCards {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+	align-items: stretch;
+	flex-wrap: wrap;
+	flex: 1 1 0;
+}
+.wellnessGoals {
+	background-color: #f0f8ff;
+	padding: 15px;
+	border-radius: 8px;
+	margin-bottom: 20px;
+}
+
+.wellnessGoals h3 {
+	margin-top: 0;
+	color: #333;
+}

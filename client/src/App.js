@@ -1,9 +1,8 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router";
 
-import PatientDashboard from "./pages/PatientDashboard";
 import Login from "./pages/LoginPage/Login";
+import PatientDashboard from "./pages/PatientDashboard/PatientDashboard";
 
 function App() {
 	return (
@@ -12,6 +11,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<PatientDashboard />} />
 					<Route path="/login" element={<Login/>}/>
+					<Route path="/dashboard" element={<PatientDashboard />} />
 				</Routes>
 			</BrowserRouter>
 		</>

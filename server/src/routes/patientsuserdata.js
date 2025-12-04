@@ -1,6 +1,7 @@
-const express = require('express');
+import express from 'express';
+import { Patient } from '../models/patient.js';
+
 const router = express.Router();
-const Patient = require('../models/patient');
 
 // Get patient data by userId
 router.get('/:userId', async (req, res) => {
@@ -27,4 +28,4 @@ router.post('/:userId', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express';
+import { Patient } from '../models/patient.js';
+import { User } from '../models/users.js';
+
 const router = express.Router();
-const Patient = require('../models/patient');
-const User = require('../models/users');
 
 // Register a new patient
 router.post('/', async (req, res) => {
@@ -17,4 +18,4 @@ router.post('/', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

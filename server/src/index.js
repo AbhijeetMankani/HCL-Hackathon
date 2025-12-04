@@ -1,8 +1,8 @@
-import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import connectDB from './db/db.js'; // Note the .js extension is required in ES6
+import connectDB from './db/db.js';
+import app from './app.js';
 
 // Load environment variables
 dotenv.config();
@@ -10,17 +10,9 @@ dotenv.config();
 // Connect to Database
 connectDB();
 
-const app = express();
-
 // Middleware
-app.use(express.json()); // Parse JSON bodies
-app.use(cors()); // Allow frontend communication
-app.use(cookieParser()); // Parse cookies
-
-// Test Route
-app.get('/', (req, res) => {
-  res.send('API is running... Healthcare Portal Backend');
-});
+app.use(cors());
+app.use(cookieParser());
 
 // Start Server
 const PORT = process.env.PORT || 5000;

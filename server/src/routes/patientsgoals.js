@@ -1,6 +1,7 @@
-const express = require('express');
+import express from 'express';
+import { WellnessGoal } from '../models/wellnessgoals.js';
+
 const router = express.Router();
-const WellnessGoal = require('../models/wellnessgoals');
 
 // Get all goals for a patient
 router.get('/:patientId', async (req, res) => {
@@ -23,4 +24,4 @@ router.post('/:patientId', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

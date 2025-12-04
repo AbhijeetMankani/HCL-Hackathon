@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express';
+import { User } from '../models/users.js';
+import bcrypt from 'bcrypt';
+
 const router = express.Router();
-const User = require('../models/users');
-const bcrypt = require('bcrypt');
 
 // Patient login
 router.post('/', async (req, res) => {
@@ -19,4 +20,4 @@ router.post('/', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

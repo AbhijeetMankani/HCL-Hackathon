@@ -19,7 +19,7 @@ export default function PatientDashboard() {
 					<div>
 						<h1>Welcome, David</h1>
 					</div>
-					<WellnessGoals />
+					<WellnessGoals className="goals" />
 					<PreventiveCareReminders />
 					<HealthTip />
 				</div>

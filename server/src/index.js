@@ -2,13 +2,13 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-// import connectDB from './db/db.js'; // Note the .js extension is required in ES6
+import connectDB from './db/db.js'; // Note the .js extension is required in ES6
 
 // Load environment variables
 dotenv.config();
 
 // Connect to Database
-// connectDB();
+connectDB();
 
 const app = express();
 

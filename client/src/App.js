@@ -5,6 +5,7 @@ import Login from "./pages/LoginPage/Login";
 import PatientDashboard from "./pages/PatientDashboard/PatientDashboard";
 import PatientProfile from "./pages/PatientProfile/PatientProfile";
 import HealthInformation from "./pages/HealthInformation/HealthInformation";
+import ProviderDashboard from "./pages/ProviderDashboard/ProviderDashboard";
 function App() {
 	return (
 		<>
@@ -18,6 +19,7 @@ function App() {
 						path="/health-info"
 						element={<HealthInformation />}
 					/>
+					<Route path="/provider" element={<ProviderDashboard />} />
 				</Routes>
 			</BrowserRouter>
 		</>

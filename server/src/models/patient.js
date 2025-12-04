@@ -93,7 +93,4 @@ const patientSchema = new Schema(
   }
 );
 
-// Index for faster lookups
-patientSchema.index({ userId: 1 });
-
 export const Patient = mongoose.model("Patient", patientSchema);

@@ -1,0 +1,201 @@
+.patientProfile {
+	background: #ffffff;
+	min-height: 100vh;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif;
+}
+
+.profileContent {
+	flex: 1;
+	padding: 30px 40px;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	background: #f9fafb;
+}
+
+.profileHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: white;
+	border-radius: 12px;
+	padding: 24px 32px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	border-left: 4px solid #6366f1;
+}
+
+.profileHeader h1 {
+	margin: 0;
+	color: #1f2937;
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.editButton,
+.saveButton,
+.cancelButton {
+	padding: 10px 20px;
+	border: none;
+	border-radius: 8px;
+	font-weight: 600;
+	font-size: 0.95rem;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.editButton {
+	background: #6366f1;
+	color: white;
+}
+
+.editButton:hover {
+	background: #4f46e5;
+}
+
+.editActions {
+	display: flex;
+	gap: 12px;
+}
+
+.saveButton {
+	background: #10b981;
+	color: white;
+}
+
+.saveButton:hover {
+	background: #059669;
+}
+
+.cancelButton {
+	background: #ef4444;
+	color: white;
+}
+
+.cancelButton:hover {
+	background: #dc2626;
+}
+
+.profileCard {
+	background: white;
+	border-radius: 12px;
+	padding: 24px 32px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	border-top: 4px solid #6366f1;
+}
+
+.profileCard h2 {
+	margin: 0 0 20px 0;
+	color: #1f2937;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.profileField {
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.profileField:last-child {
+	margin-bottom: 0;
+}
+
+.profileField label {
+	display: block;
+	font-weight: 600;
+	color: #374151;
+	margin-bottom: 8px;
+	font-size: 0.95rem;
+}
+
+.profileField p {
+	margin: 0;
+	padding: 10px 12px;
+	background: #f9fafb;
+	border-radius: 8px;
+	color: #1f2937;
+	border: 1px solid #e5e7eb;
+	min-height: 20px;
+}
+
+.profileField input,
+.profileField textarea {
+	width: 100%;
+	padding: 10px 12px;
+	border: 2px solid #d1d5db;
+	border-radius: 8px;
+	font-family: inherit;
+	font-size: 0.95rem;
+	color: #1f2937;
+	transition: all 0.2s ease;
+	box-sizing: border-box;
+}
+
+.profileField input:focus,
+.profileField textarea:focus {
+	outline: none;
+	border-color: #6366f1;
+	box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.profileField textarea {
+	resize: vertical;
+	min-height: 60px;
+}
+
+.profileField.readOnly {
+	background: #f9fafb;
+	padding: 16px;
+	border-radius: 8px;
+	border: 1px solid #e5e7eb;
+}
+
+.profileField.readOnly p {
+	background: transparent;
+	border: none;
+	padding: 0;
+}
+
+.readOnlyBadge {
+	display: inline-block;
+	background: #6366f1;
+	color: white;
+	padding: 4px 10px;
+	border-radius: 12px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+	.profileContent {
+		padding: 20px 24px;
+		gap: 16px;
+	}
+
+	.profileHeader {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 16px;
+		padding: 16px 20px;
+	}
+
+	.profileHeader h1 {
+		font-size: 1.5rem;
+	}
+
+	.editActions {
+		width: 100%;
+		justify-content: stretch;
+	}
+
+	.editActions button {
+		flex: 1;
+	}
+
+	.profileCard {
+		padding: 16px 20px;
+	}
+}
